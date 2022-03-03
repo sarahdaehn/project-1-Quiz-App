@@ -3,6 +3,10 @@
 The App is called Quiz App. It's a Quiz App for User which want to test their knowledge in Coding.  
 User get Questions and can choose between 3 Solutions. 
 
+## deployed Version on Netlify
+
+https://sarah-daehn-quiz-app.netlify.app/
+
 ## Link to the API you plan to use
 
 https://quizapi.io/api/v1/questions?apiKey=YOUR_API_KEY&difficulty=Medium&limit=10
