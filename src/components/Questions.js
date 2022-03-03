@@ -1,8 +1,17 @@
 
+import React from 'react';
 
 
 
 export default function Questions() {
-    return // ask Questions with 3 buttons for multiply choice answers.
+
+    return (
+
+        <>
+        <div>Questions</div>
+        </>
+        
+        
+    )// ask Questions with 3 buttons for multiply choice answers.
 };
 

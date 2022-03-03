@@ -1,4 +1,60 @@
-export default function StartQuiz() {
-    return // button starts Quiz Homepage (App)
+import {useState, useEffect} from 'react';
+import React from 'react';
+import Questions from './Questions';
+import {Link, useNavigate} from 'react-router-dom';
+
+
+
+
+
+
+
+
+
+
+
+
+export default function StartQuiz(props) {
+
+    const navigate = useNavigate();
+
+
+
+    
+    function handleClick(event){
+        event.preventDefault();
+        console.log('Lets start');
+       
+        
+       
+
+        <link to='/quiz'></link>
+        
+
+    }
+
+
+
+
+    return (// button starts Quiz Homepage (App)
+    <>
+
+<div className="d-grid gap-2 col-6 mx-auto">
+  <button onClick={() => navigate ('/quiz')} className="btn btn-primary" type="button">Start Quiz</button>
+
+
+
+
+
+    {/* <div className="d-grid gap-2 col-6 mx-auto">
+  <button onClick={handleClick} className="btn btn-primary" type="button">Start Quiz</button>
+   */}
+  
+</div>
+    
+   
+    </>
+
+    )
 }
 

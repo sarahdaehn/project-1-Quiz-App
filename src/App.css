@@ -1,3 +1,6 @@
+
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+.Logo {
+  height: 60vmin;
+  pointer-events: none;
+  display: flex;
+  text-align: center;
 }
