@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 //import{QuizContext} from './Context';
-import {useReducer} from 'react';
+//import {useReducer} from 'react';
 
 
 
@@ -27,7 +27,7 @@ export default function Questions(props) {
 
     const [correctAnswer, setCorrectAnswer] = useState([]);
 
-    //const [score, setScore] = useState(0);
+    const [score, setScore] = useState(0);
 
 
     //const handleScore = () => setScore (score +1);
@@ -102,11 +102,24 @@ export default function Questions(props) {
         console.log(answer)
         if (
             answer === correctAnswer 
+            
         ) {
-            console.log('you are correct')
+            const result = score + 1;
+            setScore(result);
+            console.log(result)
+            
+
+            
+            console.log(`you are correct! Your Score is ${result}`)
+             
+             
         } else {
+
+           
             console.log('You are incorrect')
         }
+
+
 
             // shows the value of the Object - true / false 
             //if(answers.key.value)
