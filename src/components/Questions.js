@@ -1,6 +1,8 @@
 
 import React, { useEffect } from 'react';
 import {useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+
 //import{QuizContext} from './Context';
 //import {useReducer} from 'react';
 
@@ -22,6 +24,8 @@ export default function Questions(props) {
     //const[question, setQuestion] = useState([]);
     const [question, setQuestion] = useState([]);
 
+    //const [nextQuestion, setNextQuestion] = useState(0);
+
 
     const[answers, setAnswers] = useState ([]);
 
@@ -29,6 +33,8 @@ export default function Questions(props) {
 
     const [score, setScore] = useState(0);
 
+
+const navigate = useNavigate();
 
     //const handleScore = () => setScore (score +1);
 
@@ -60,28 +66,13 @@ export default function Questions(props) {
         fetch(url)
         .then(res => res.json())
         .then((data) => {
-            //setQuestion(res)
-            //console.log(data);
-            // data check for question
-            //console.log(data[0].question);
-            // correct answer
            
             console.log(data);
-            // console.log(data[0].correct_answers);
-            //console.log(data[0].answers.answer_a)
-            // console.log(data[0].question);
-            // console.log(data[0].correct_answer)
             console.log(data[0].correct_answers)
             setCorrectAnswer(data[0].correct_answer)
             setQuestion(data[0].question)
             setAnswers(data[0].answers);
-
-            
-
-
-
-
-            //setQuestion(data.correct_answers);
+        
 
            
 
@@ -91,13 +82,6 @@ export default function Questions(props) {
     }, []);
 
 
-    // function correct() {
-    //     if ((answers) === true) {
-    //         alert('correct');
-    //     }
-        
-    // };
-
     function handleAnswer(answer) {
         console.log(answer)
         if (
@@ -106,122 +90,90 @@ export default function Questions(props) {
         ) {
             const result = score + 1;
             setScore(result);
+            //color='green'
+            //notworking
+            //localStorage.setItem(result)
             console.log(result)
-            
+            //result = localStorage
+            //answer.target.style.color = 'green'
 
-            
-            console.log(`you are correct! Your Score is ${result}`)
-             
-             
+            console.log(`you are correct! Your Score is ${result}`)     
         } else {
-
-           
             console.log('You are incorrect')
         }
-
-
-
-            // shows the value of the Object - true / false 
-            //if(answers.key.value)
-            // map through the value 
-           
-
-            //console.log(answers.key.value)
-
-
-
-
-
-            // Logic 
-            // if value = true save score 
-            // if value = false return 
-        //)
     };
+    
 
-    // function ScoreCounter (state, action) {
-    //     if (action === 'True') {
-    //         return state + 1
-    //     } return state 
+   
+
+    // function refreshPage(){
+    //     window.location.reload(false);
+       
     // }
-// const [score, dispatch] = useReducer((state, action) => {ScoreCounter}, 0);
 
-//     function ScoreCounter (state, action) {
-//         switch(action.type) {
-//             case 'INCREMENT': return (state += action.value); 
-//             default: return state ;
-//         }
-//     }
+
+    function nextQuestion(){
+
+            const url = ('https://quizapi.io/api/v1/questions?apiKey=kGlnNNrvOFUBZ6KFBgANGmWyXn3fUlj6NKHHEQaO&difficulty=Medium&limit=10');
+            fetch(url)
+            .then(res => res.json())
+            .then((data) => {
+               
+                console.log(data);
+                console.log(data[0].correct_answers)
+                setCorrectAnswer(data[0].correct_answer)
+                setQuestion(data[0].question)
+                setAnswers(data[0].answers);
+            
+    
+               
+    
+    
+            }) 
+            .catch(console.error);
+
+    }
+        
 
 
     return (
-
-        <>
+      <>
         <section>
-            
-            
-            <div className="question-body">
-                <h5 className="question-title">Question</h5>
-                <p className="question-text">{question}</p>
-              </div>
-            <div className="d-grid gap-2 col-6 mx-auto">
-                
-                {/* {Object.entries(answers).map(function([key, value]){
-                    return <button onClick={() => dispatch({type:'INCREMENT', value: 1})}className="btn btn-primary" type="button">{answers[key]}</button>;
-                  })} */}
-
-{Object.entries(answers).map(function([name]){
-    
-        return <button onClick={() => handleAnswer(name)} className="btn btn-primary" type="button">{answers[name]}</button>;
+          <div className="question-body">
+            <h5 className="question-title">Question</h5>
+            <p className="question-text">{question}</p>
+          </div>
+          <div className="d-grid gap-2 col-6 mx-auto">
 
 
-    })}
-
-                
-
-              {/* <button className="btn btn-primary" type="button">{question.correct_answer}Answer2 </button>
-              <button className="btn btn-primary" type="button">{question.answers}Answer 3</button> */}
+            {Object.entries(answers).map(function ([name],index) {
+              return (
+                <button key={index}
+                  onClick={() => handleAnswer(name)}
+                  className="btn btn-primary"
+                  type="button"
+                >
+                  {answers[name]}
+                </button>
+              );
+            })}
             </div>
-           
+            <div>
+          <button  onClick={nextQuestion}id="nextbutton" type="button" className="btn btn-primary btn-sm">NEXT QUESTION</button>
+          </div>
+          <div>
+          
+          <button onClick={() => navigate ('/')} id="stopquiz" type="button" className="btn btn-primary btn-sm">STOP QUIZ</button>
+          </div>
+          
+         
         </section>
-
-        </>
-        
-        
-    )// ask Questions with 3 buttons for multiply choice answers.
+      </>
+    )
 };
 
-//ToDo 
-// don't show null answers 
-
-// Object = Keys Value 
-
-
-//style= {answers === true && {backgroundColor:'red'} }
-
-
-
-// Working Version 
-
-// {/* <section>
-            
-            
-// <div className="question-body">
-//     <h5 className="question-title">Question</h5>
-//     <p className="question-text">{question}</p>
-//   </div>
-// <div className="d-grid gap-2 col-6 mx-auto">
-    
-//     {Object.entries(answers).map(function([name]){
-//         return <button onClick={handleAnswer} className="btn btn-primary" type="button">{answers[name]}</button>;
-//       })}
 
 
 
 
-    
 
-//   {/* <button className="btn btn-primary" type="button">{question.correct_answer}Answer2 </button>
-//   <button className="btn btn-primary" type="button">{question.answers}Answer 3</button> */}
-// </div>
-
-// </section> */}
