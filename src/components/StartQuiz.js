@@ -19,6 +19,8 @@ import {QuizContext} from './Context';
 export default function StartQuiz(props) {
 
     const navigate = useNavigate();
+    const [startQuiz, setStartQuiz] = useState();
+
 
 
 
@@ -40,7 +42,7 @@ export default function StartQuiz(props) {
 
     return (// button starts Quiz Homepage (App)
     <>
-    <QuizContext.Provider>
+    <QuizContext.Provider value={{startQuiz, setStartQuiz}}>
 
 <div className="d-grid gap-2 col-6 mx-auto">
   <button onClick={() => navigate ('/quiz')} className="btn btn-primary" type="button">Start Quiz</button>

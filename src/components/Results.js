@@ -8,4 +8,4 @@ export default function Results() {
         <div>Results</div>
         </>
     )
-}
+};
