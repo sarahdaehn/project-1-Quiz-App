@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
+import { Popup } from 'reactjs-popup';
 
 
 
@@ -72,6 +73,7 @@ export default function Questions(props) {
             const result = score + 1;
             setScore(result);
             nextQuestion()
+            //popup();
             //color='green'
             //notworking
             //localStorage.setItem(result)
@@ -79,13 +81,23 @@ export default function Questions(props) {
             //result = localStorage
             //answer.target.style.color = 'green'
             //console.log(this)
-            console.log(`you are correct! Your Score is ${result}`)  
-            alert(`you are correct! Your Score is ${result}`)   
+            console.log(`CORRECT! SCORE ${result}`)  
+            
+            alert(`CORRECT! SCORE ${result}`)   
         } else {
             console.log('You are incorrect')
-            alert('You are incorrect')
+            window.alert('You are incorrect')
         }
     };
+
+ function popup() {
+     <Popup trigger={<button>Trigger</button>} position="right center">
+         <div>HELLO</div>
+     </Popup>
+ };
+
+
+ 
     
 
    

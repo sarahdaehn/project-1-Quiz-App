@@ -34,6 +34,11 @@ function App() {
         
         <p>Quiz Information</p>
       </Link>
+      <Link to='/'>
+        
+        <p>Start Quiz</p>
+      </Link>
+
       </nav>
 
 
