@@ -3,32 +3,11 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import { Popup } from 'reactjs-popup';
-
-
-
-//import{QuizContext} from './Context';
-//import {useReducer} from 'react';
-
-
-
-// 
-
-
-
-
-
+ 
 
 export default function Questions(props) {
 
-
-
-    
-     // get the questions - default empty array 
-    //const[question, setQuestion] = useState([]);
     const [question, setQuestion] = useState([]);
-
-    //const [nextQuestion, setNextQuestion] = useState(0);
-
 
     const[answers, setAnswers] = useState ([]);
 
@@ -65,7 +44,6 @@ export default function Questions(props) {
 
 
     function handleAnswer(answer) {
-       // console.log(answer)
         if (
             answer === correctAnswer 
             
