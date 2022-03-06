@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
+
+
 //import{QuizContext} from './Context';
 //import {useReducer} from 'react';
 
@@ -33,30 +35,9 @@ export default function Questions(props) {
 
     const [score, setScore] = useState(0);
 
-
-const navigate = useNavigate();
-
-    //const handleScore = () => setScore (score +1);
+    const navigate = useNavigate();
 
 
-    //const[buttonColor, setButtonColor] = useState(false)
-
-    
-    //const [colorButton, setColorButton] = useState("red");
-
-
-    // function handleAnswer(event){
-    //     event.preventDefault();
-
-
-    //     if(answers === true){
-    //         console.log("true")  
-    // }
-    // return false
-    // };
-
-
-//
 
 
 
@@ -83,23 +64,26 @@ const navigate = useNavigate();
 
 
     function handleAnswer(answer) {
-        console.log(answer)
+       // console.log(answer)
         if (
             answer === correctAnswer 
             
         ) {
             const result = score + 1;
             setScore(result);
+            nextQuestion()
             //color='green'
             //notworking
             //localStorage.setItem(result)
-            console.log(result)
+            //console.log(result)
             //result = localStorage
             //answer.target.style.color = 'green'
-
-            console.log(`you are correct! Your Score is ${result}`)     
+            //console.log(this)
+            console.log(`you are correct! Your Score is ${result}`)  
+            alert(`you are correct! Your Score is ${result}`)   
         } else {
             console.log('You are incorrect')
+            alert('You are incorrect')
         }
     };
     
@@ -124,18 +108,19 @@ const navigate = useNavigate();
                 setCorrectAnswer(data[0].correct_answer)
                 setQuestion(data[0].question)
                 setAnswers(data[0].answers);
-            
-    
-               
-    
     
             }) 
             .catch(console.error);
 
     }
-        
+  
+    // const [isCorrect, setCorrect] = useState(false);    
 
-
+    // const toggleClass = () => {
+    //     console.log("=======>>>>>>")
+    //     setCorrect(!isCorrect);
+    //   };
+    
     return (
       <>
         <section>
@@ -149,9 +134,16 @@ const navigate = useNavigate();
             {Object.entries(answers).map(function ([name],index) {
               return (
                 <button key={index}
-                  onClick={() => handleAnswer(name)}
-                  className="btn btn-primary"
+                //   onClick={() => handleAnswer(this, name, index)}
+                  //
+                //   onClick={toggleClass}
+                onClick={() => handleAnswer(name)}
+                className="btn btn-primary"
+                //{answer === correctAnswer ? 'green' : 'red'}
+                 // style={correctAnswer ? {backgroundColor:'green'} : !correctAnswer ? {backgroundColor: 'red'}
+                //   className="btn btn-primary"
                   type="button"
+                //   id={"answer-" + index}
                 >
                   {answers[name]}
                 </button>
@@ -165,6 +157,12 @@ const navigate = useNavigate();
           
           <button onClick={() => navigate ('/')} id="stopquiz" type="button" className="btn btn-primary btn-sm">STOP QUIZ</button>
           </div>
+
+          <div>
+          <button  id="score" type="button"  className="btn btn-primary btn-sm">SCORE</button>
+          </div>
+
+         
           
          
         </section>
