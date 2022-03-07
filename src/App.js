@@ -13,6 +13,10 @@ import Popup from "./components/Popup";
 
 
 
+
+
+
+
 //import {useState, useEffect} from 'react';
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>
@@ -29,7 +33,15 @@ function App() {
     <div>
       <nav className="nav">
        <img className="Logo"
-       src='https://cdn-icons.flaticon.com/png/512/3261/premium/3261190.png?token=exp=1646336314~hmac=27d18915f2ed0230a6217b50d2eb528b' alt='' />
+
+       
+       src="images/science-logo.jpg" alt=''/>
+
+
+       
+       
+       
+       {/* https://cdn-icons.flaticon.com/png/512/3261/premium/3261190.png?token=exp=1646336314~hmac=27d18915f2ed0230a6217b50d2eb528b */}
 
 <h1>Quiz App</h1>
 
@@ -51,7 +63,7 @@ function App() {
    
   
     <main>
-      {/* <Popup/> */}
+      
 
     
 <Routes> 

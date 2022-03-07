@@ -46,14 +46,7 @@ export default function StartQuiz(props) {
 
 <div className="d-grid gap-2 col-6 mx-auto">
   <button onClick={() => navigate ('/quiz')} className="btn btn-primary" type="button">Start Quiz</button>
-  
 
-
-
-
-    {/* <div className="d-grid gap-2 col-6 mx-auto">
-  <button onClick={handleClick} className="btn btn-primary" type="button">Start Quiz</button>
-   */}
   
 </div>
 </QuizContext.Provider>

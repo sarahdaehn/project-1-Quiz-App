@@ -219,7 +219,7 @@ const [wrong, setWrong] = useState(false);
           <Modal.Body>OH NO, you're incorrect!</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleWrongClose}>
-              NEXT QUESTION
+              CLOSE
             </Button>
            
           </Modal.Footer>

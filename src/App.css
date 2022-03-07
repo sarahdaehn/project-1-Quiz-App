@@ -6,9 +6,11 @@
 }
 
 .Logo {
-  height: 40vmin;
+  height: 50vmin;
   pointer-events: none;
   display: flex
+  
+
   
 }
 
@@ -64,6 +66,10 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+  }
+
+  main {
+    text-align: center;
   }
 
   /* body {
