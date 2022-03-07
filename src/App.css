@@ -8,6 +8,8 @@
 .Logo {
   height: 40vmin;
   pointer-events: none;
+  display: flex
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -51,3 +53,21 @@
   display: flex;
   text-align: center;
 }
+
+
+.nav {
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  /* body {
+    display: grid;
+    grid-template-rows: 80px 1fr 80px;
+    grid-template-columns: 100px 1fr 100px;
+  } */

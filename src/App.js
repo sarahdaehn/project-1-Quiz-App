@@ -7,6 +7,9 @@ import {BrowserRouter} from 'react-router-dom';
 import {Routes, Route, Link, Navigate} from 'react-router-dom';
 import React from 'react';
 import QuizInformation from "./components/QuizInformation";
+import {Modal} from 'react-bootstrap';
+import Popup from "./components/Popup";
+
 
 
 
@@ -24,7 +27,7 @@ function App() {
   return (
     <>
     <div>
-      <nav>
+      <nav className="nav">
        <img className="Logo"
        src='https://cdn-icons.flaticon.com/png/512/3261/premium/3261190.png?token=exp=1646336314~hmac=27d18915f2ed0230a6217b50d2eb528b' alt='' />
 
@@ -32,11 +35,12 @@ function App() {
 
 <Link to='/quizInformation'>
         
-        <p>Quiz Information</p>
+        <p>QUIZ INFORMATION</p>
       </Link>
       <Link to='/'>
         
-        <p>Start Quiz</p>
+        <p>HOME</p>
+
       </Link>
 
       </nav>
@@ -47,6 +51,7 @@ function App() {
    
   
     <main>
+      {/* <Popup/> */}
 
     
 <Routes> 

@@ -2,7 +2,16 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-import { Popup } from 'reactjs-popup';
+import {Modal, Button} from 'react-bootstrap'
+//import { Popup } from 'reactjs-popup';
+// import { Alert } from 'bootstrap';
+// import Alert from 'reactjs-popup-alert'
+// import Popup from './Popup';
+
+// import { withAlert } from 'react-alert'
+
+
+import "./Questions.css";
  
 
 export default function Questions(props) {
@@ -15,7 +24,22 @@ export default function Questions(props) {
 
     const [score, setScore] = useState(0);
 
+const [show, setShow] = useState(false);
+const [wrong, setWrong] = useState(false);  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const handleWrong = () => setWrong(true);
+    const handleWrongClose = () => setWrong(false)
+    
+    
+
     const navigate = useNavigate();
+
+//     const [isOpen, setIsOpen ] = useState(false);
+
+// const togglePopup = () => {
+//   setIsOpen(!isOpen);
+// }
 
 
 
@@ -51,28 +75,42 @@ export default function Questions(props) {
             const result = score + 1;
             setScore(result);
             nextQuestion()
-            //popup();
-            //color='green'
-            //notworking
-            //localStorage.setItem(result)
-            //console.log(result)
-            //result = localStorage
-            //answer.target.style.color = 'green'
-            //console.log(this)
-            console.log(`CORRECT! SCORE ${result}`)  
-            
-            alert(`CORRECT! SCORE ${result}`)   
+          
+            console.log(`CORRECT! SCORE ${result}`) 
+            handleShow() 
+
+            // alert.score isn't working 
+            // alert(`CORRECT! SCORE ${result}`)
+
+
         } else {
             console.log('You are incorrect')
-            window.alert('You are incorrect')
+            handleWrong()
+            
+            
+
+            // alert('You are incorrect')
         }
     };
 
- function popup() {
-     <Popup trigger={<button>Trigger</button>} position="right center">
-         <div>HELLO</div>
-     </Popup>
- };
+//  function popup() {
+//      <Popup trigger={<button>Trigger</button>} position="right center">
+//          <div>HELLO</div>
+//      </Popup>
+//  };
+
+
+// function Popup (props){
+//   return (
+//     <div className="popup-box">
+//     <div className="box">
+//       <span className="close-icon" onClick={props.handleClose}>x</span>
+//       {props.content}
+//     </div>
+//   </div>
+// );
+// };
+
 
 
  
@@ -128,13 +166,15 @@ export default function Questions(props) {
                   //
                 //   onClick={toggleClass}
                 onClick={() => handleAnswer(name)}
+                
                 className="btn btn-primary"
                 //{answer === correctAnswer ? 'green' : 'red'}
                  // style={correctAnswer ? {backgroundColor:'green'} : !correctAnswer ? {backgroundColor: 'red'}
                 //   className="btn btn-primary"
                   type="button"
+                  // <Popup trigger={true}></Popup>
                 //   id={"answer-" + index}
-                >
+                 >
                   {answers[name]}
                 </button>
               );
@@ -145,18 +185,54 @@ export default function Questions(props) {
           </div>
           <div>
           
-          <button onClick={() => navigate ('/')} id="stopquiz" type="button" className="btn btn-primary btn-sm">STOP QUIZ</button>
+          <button onClick={() => navigate ('/')} id="stopquiz" type="button"   className="btn btn-primary btn-sm">STOP QUIZ</button>
           </div>
 
-          <div>
+          {/* style="float: right;" */}
+
+          {/* <div>
           <button  id="score" type="button"  className="btn btn-primary btn-sm">SCORE</button>
-          </div>
+          </div> */}
 
          
-          
+
+         {/* //write answer  */}
+<Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>CORRECT</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're correct!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              NEXT QUESTION
+            </Button>
+           
+          </Modal.Footer>
+        </Modal>
+
+
+{/* // wrong Answer */}
+        <Modal show={wrong} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>INCORRECT</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>OH NO, you're incorrect!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleWrongClose}>
+              NEXT QUESTION
+            </Button>
+           
+          </Modal.Footer>
+        </Modal>
+      
          
+
+
+
         </section>
       </>
+
+
     )
 };
 

@@ -1,12 +1,19 @@
 
 
+
+
+
+
+
+
 #nextbutton {
     text-align: right;
+    object-position: right;
+
+   
+      
 }
 
 
 
 
-.correctanswer {
-    background-color: green;
-}
