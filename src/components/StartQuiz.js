@@ -40,7 +40,7 @@ export default function StartQuiz(props) {
 
 
 
-    return (// button starts Quiz Homepage (App)
+    return (
     <>
     <QuizContext.Provider value={{startQuiz, setStartQuiz}}>
 
