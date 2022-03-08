@@ -11,12 +11,6 @@ import {Modal} from 'react-bootstrap';
 import Popup from "./components/Popup";
 
 
-
-
-
-
-
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>
 
 
@@ -25,13 +19,15 @@ function App() {
   return (
     <>
       <div>
+       
+      
         <nav className="nav">
           <img className="Logo" src="images/science-logo.jpg" alt="" />
 
-          <h1>Quiz App</h1>
-          <h1>Quiz App</h1>
 
           <Link to="/quizInformation">
+            <br/>
+            <br/>
             <p>QUIZ INFORMATION</p>
           </Link>
           <Link to="/">
@@ -45,7 +41,7 @@ function App() {
           <Route path="/" element={<StartQuiz />} />
           <Route path="/quiz" element={<Questions />} />
           <Route path="/quizInformation" element={<QuizInformation />} />
-          <Route path="/results" element={<Results />} />
+          {/* <Route path="/results" element={<Results />} /> */}
         </Routes>
       </main>
     </>
