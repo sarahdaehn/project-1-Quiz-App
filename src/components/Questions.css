@@ -1,12 +1,19 @@
 
 button#stopquiz {
-    
     float: right;
+    display: flex;
+    margin-right: 5%;
 }
    
 
 button#nextbutton {
-    float:left
+    float:left;
+    display: flex;
+    margin-left: 5%;
+
 }
+
+
+
 
 
