@@ -1,7 +1,6 @@
 ## Project Description 
 
-The App is called Quiz App. It's a Multiple Choice Quiz App for User which want to test their knowledge in Linux.   
-The User gets a Questions and has to pick from the multiple choices the correct answer. A Quiz is always a fun way to learn information and to improve the knowledge. 
+The App is called Quiz App. It's a Multiple Choice Quiz App for User which want to test their knowledge in Linux. The User gets a Questions and has to pick from the multiple choices the correct answer. A Quiz is always a fun way to learn information and to improve the knowledge. 
 
 
 ![Picture1-Quiz](https://user-images.githubusercontent.com/63123554/157294248-e65e2a2c-aaa4-4eae-a6c8-86c47aa195bb.jpg)
