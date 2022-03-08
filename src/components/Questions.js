@@ -3,12 +3,7 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {Modal, Button} from 'react-bootstrap'
-//import { Popup } from 'reactjs-popup';
-// import { Alert } from 'bootstrap';
-// import Alert from 'reactjs-popup-alert'
-// import Popup from './Popup';
 
-// import { withAlert } from 'react-alert'
 
 
 import "./Questions.css";
@@ -34,17 +29,6 @@ const [wrong, setWrong] = useState(false);
     
 
     const navigate = useNavigate();
-
-//     const [isOpen, setIsOpen ] = useState(false);
-
-// const togglePopup = () => {
-//   setIsOpen(!isOpen);
-// }
-
-
-
-
-
 
     useEffect(() => {
         const url = ('https://quizapi.io/api/v1/questions?apiKey=kGlnNNrvOFUBZ6KFBgANGmWyXn3fUlj6NKHHEQaO&difficulty=Medium&limit=10');
@@ -97,8 +81,6 @@ const [wrong, setWrong] = useState(false);
             .then(res => res.json())
             .then((data) => {
                
-                // console.log(data);
-                // console.log(data[0].correct_answers)
                 setCorrectAnswer(data[0].correct_answer)
                 setQuestion(data[0].question)
                 setAnswers(data[0].answers);

@@ -50,6 +50,7 @@
 }
 
 .logo {
+  
   height: 60vmin;
   pointer-events: none;
   display: flex;
@@ -68,10 +69,27 @@
     color: white;
   }
 
-  main {
-    text-align: center;
-  }
+  /* main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 
+    text-align: center;
+  } */
+
+  /* section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  } */
   /* body {
     display: grid;
     grid-template-rows: 80px 1fr 80px;
