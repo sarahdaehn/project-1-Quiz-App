@@ -1,7 +1,7 @@
 ## Project Description 
 
-The App is called Quiz App. It's a Quiz App for User which want to test their knowledge in Coding.  
-User get Questions and can choose between 3 Solutions. 
+The App is called Quiz App. It's a Multiple Choice Quiz App for User which want to test their knowledge in Linux.   
+The User gets a Questions and has to pick from the multiple choices the correct answer. 
 
 ## deployed Version on Netlify
 
