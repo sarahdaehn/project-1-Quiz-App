@@ -35,9 +35,7 @@ const [wrong, setWrong] = useState(false);
         fetch(url)
         .then(res => res.json())
         .then((data) => {
-           
-            console.log(data);
-            console.log(data[0].correct_answers)
+          
             setCorrectAnswer(data[0].correct_answer)
             setQuestion(data[0].question)
             setAnswers(data[0].answers);
