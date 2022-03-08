@@ -61,12 +61,12 @@ const [wrong, setWrong] = useState(false);
             // console.log(`CORRECT! SCORE ${result}`) 
             handleShow() 
 
-            // alert.score isn't working 
+            
             // alert(`CORRECT! SCORE ${result}`)
 
 
         } else {
-            // console.log('You are incorrect')
+            
             handleWrong()
         }
     };
@@ -101,6 +101,9 @@ const [wrong, setWrong] = useState(false);
 
 
             {Object.entries(answers).map(function ([name],index) {
+              
+              if (answers[name] != null) {
+
               return (
                 <button key={index}
                 
@@ -113,8 +116,10 @@ const [wrong, setWrong] = useState(false);
                  >
                   {answers[name]}
                 </button>
-              );
+              )};
+            
             })}
+            
             </div>
 
             <br/>
