@@ -27,14 +27,8 @@ export default function StartQuiz(props) {
     
     function handleClick(event){
         event.preventDefault();
-        console.log('Lets start');
-       
-        
-       
-
         <link to='/quiz'></link>
         
-
     }
 
 

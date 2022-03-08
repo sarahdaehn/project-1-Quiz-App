@@ -1,19 +1,12 @@
 
-
-
-
-
-
-
-
-#nextbutton {
-    text-align: right;
-    object-position: right;
-
-   
-      
+button#stopquiz {
+    
+    float: right;
 }
+   
 
-
+button#nextbutton {
+    float:left
+}
 
 

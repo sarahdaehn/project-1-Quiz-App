@@ -24,49 +24,30 @@ import Popup from "./components/Popup";
 function App() {
   return (
     <>
-    <div>
-      <nav className="nav">
-       <img className="Logo"
+      <div>
+        <nav className="nav">
+          <img className="Logo" src="images/science-logo.jpg" alt="" />
 
-       
-       src="images/science-logo.jpg" alt=''/>
+          <h1>Quiz App</h1>
+          <h1>Quiz App</h1>
 
+          <Link to="/quizInformation">
+            <p>QUIZ INFORMATION</p>
+          </Link>
+          <Link to="/">
+            <p>HOME</p>
+          </Link>
+        </nav>
+      </div>
 
-<h1>Quiz App</h1>
-
-<Link to='/quizInformation'>
-        
-        <p>QUIZ INFORMATION</p>
-      </Link>
-      <Link to='/'>
-        
-        <p>HOME</p>
-
-      </Link>
-
-      </nav>
-
-
-
-    </div>
-   
-  
-    <main>
-      
-
-    
-<Routes> 
-  <Route path='/' element={<StartQuiz />} />
-  <Route path='/quiz' element={<Questions />} /> 
-  <Route path='/quizInformation' element={<QuizInformation />} />
-  <Route path='/results' element={<Results />} />
-  
-</Routes>
-    
-
-    
-    </main>
-
+      <main>
+        <Routes>
+          <Route path="/" element={<StartQuiz />} />
+          <Route path="/quiz" element={<Questions />} />
+          <Route path="/quizInformation" element={<QuizInformation />} />
+          <Route path="/results" element={<Results />} />
+        </Routes>
+      </main>
     </>
   );
 }

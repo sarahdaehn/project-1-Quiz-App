@@ -94,8 +94,8 @@ const [wrong, setWrong] = useState(false);
       <>
         <section>
           <div className="question-body">
-            <h5 className="question-title">Question</h5>
-            <p className="question-text">{question}</p>
+            <h5 align="center" className="question-title">Question</h5>
+            <p align="center" className="question-text">{question}</p>
           </div>
           <div className="d-grid gap-2 col-6 mx-auto">
 
@@ -105,7 +105,7 @@ const [wrong, setWrong] = useState(false);
                 <button key={index}
                 
                 onClick={() => handleAnswer(name)}
-                
+                id="answerbutton"
                 className="btn btn-primary"
               
                   type="button"
@@ -116,12 +116,13 @@ const [wrong, setWrong] = useState(false);
               );
             })}
             </div>
+
+            <br/>
             <div>
-          <button  onClick={nextQuestion}id="nextbutton" type="button" className="btn btn-primary btn-sm">NEXT QUESTION</button>
+          <button  onClick={nextQuestion} id="nextbutton" type="button" className="btn btn-primary btn-sm">NEXT QUESTION</button>
           </div>
           <div>
-          
-          <button onClick={() => navigate ('/')} id="stopquiz" type="button"   className="btn btn-primary btn-sm">STOP QUIZ</button>
+          <button align="center" onClick={() => navigate ('/')} id="stopquiz" type="button"   className="btn btn-primary btn-sm">STOP QUIZ</button>
           </div>
 
          
