@@ -6,9 +6,9 @@ The User gets a Questions and has to pick from the multiple choices the correct 
 
 ![Picture1-Quiz](https://user-images.githubusercontent.com/63123554/157294248-e65e2a2c-aaa4-4eae-a6c8-86c47aa195bb.jpg)
 
-![Picture2 - Quiz](https://user-images.githubusercontent.com/63123554/157293450-e7b700eb-8ec2-4fa1-87ae-921bffe5b005.jpg)
-![Picture3-Quiz](https://user-images.githubusercontent.com/63123554/157293462-fffba5e0-f174-4dcf-ad91-eb04f8404dae.jpg)
+![Picture2 - Quiz](https://user-images.githubusercontent.com/63123554/157294508-a106b6d2-9714-46ce-aaa6-1e7590497c92.jpg)
 
+![Picture3-Quiz](https://user-images.githubusercontent.com/63123554/157294501-615a8638-f84c-47ed-9f6d-0025590ae2d5.jpg)
 
 
 
