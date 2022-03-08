@@ -22,3 +22,7 @@ HTML, JavaScript, CSS, Bootstrap, React (useEffect, useState), React-bootstrap (
 
 ## Contribution Guidelines:
 
+If you encounter a bug or propose improvements, you can open an issue to report the bug or the improvement. You can also contribute by adding additional information to existing issues.
+
+
+
