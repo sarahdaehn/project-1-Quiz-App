@@ -26,7 +26,7 @@ const [wrong, setWrong] = useState(false);
     const handleWrong = () => setWrong(true);
     const handleWrongClose = () => setWrong(false)
     
-    
+   const [error, setError] = useState(null) ;
 
     const navigate = useNavigate();
 
@@ -45,7 +45,10 @@ const [wrong, setWrong] = useState(false);
 
 
         }) 
-        .catch(console.error);
+        .catch(err => {
+          setError(err.message);
+        });
+        
     }, []);
 
 
@@ -76,7 +79,9 @@ const [wrong, setWrong] = useState(false);
 
             const url = ('https://quizapi.io/api/v1/questions?apiKey=kGlnNNrvOFUBZ6KFBgANGmWyXn3fUlj6NKHHEQaO&difficulty=Medium&limit=10');
             fetch(url)
-            .then(res => res.json())
+            .then(res => res.json()) 
+              
+            
             .then((data) => {
                
                 setCorrectAnswer(data[0].correct_answer)
@@ -84,7 +89,9 @@ const [wrong, setWrong] = useState(false);
                 setAnswers(data[0].answers);
     
             }) 
-            .catch(console.error);
+            .catch(err => {
+              setError(err.message);
+            });
 
     }
   
@@ -152,14 +159,14 @@ const [wrong, setWrong] = useState(false);
           </Modal.Header>
           <Modal.Body>OH NO, you're incorrect!</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleWrongClose}>
+            <Button variant="secondary"   onClick={handleWrongClose}>
               CLOSE
             </Button>
            
           </Modal.Footer>
         </Modal>
       
-         
+         {error && <div>{error}</div>}
 
 
 

@@ -66,6 +66,11 @@ nav {
   height: 50%;
  
 }
+
+Link#quizinformation {
+  float: left;
+}
+
 /* main {
     min-height: 100vh;
     height: auto;

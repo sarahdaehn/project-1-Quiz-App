@@ -25,13 +25,13 @@ function App() {
           <img className="Logo" src="images/science-logo.jpg" alt="" />
 
 
-          <Link to="/quizInformation">
+          <Link id="quizinformation" to="/quizInformation">
             <br/>
             <br/>
-            <p>QUIZ INFORMATION</p>
+            <p>Quiz Information</p>
           </Link>
           <Link to="/">
-            <p>HOME</p>
+            <p>Home</p>
           </Link>
         </nav>
       </div>
